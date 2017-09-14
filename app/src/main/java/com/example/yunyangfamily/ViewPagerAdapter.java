@@ -13,8 +13,8 @@ import android.os.Bundle;
  */
 
 public class ViewPagerAdapter extends FragmentPagerAdapter{
-    int pagecount=3;
-    private int color[]=new int[]{android.R.color.holo_orange_light,android.R.color.holo_green_dark,android.R.color.holo_red_dark};
+    int pagecount=4;
+    private int color[]=new int[]{android.R.color.holo_orange_light,android.R.color.holo_green_dark,android.R.color.holo_red_dark,android.R.color.holo_orange_light};
 
     public ViewPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -32,7 +32,16 @@ public class ViewPagerAdapter extends FragmentPagerAdapter{
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return "Page"+(position+1);
+        if(position==0)
+            return"热门专区";
+        else if(position==1)
+            return"社区";
+        else if(position==2)
+            return"个人健康";
+        else if(position==3)
+            return"VIP专区";
+        return "Page";
     }
 }
+
 

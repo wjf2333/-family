@@ -39,7 +39,14 @@ public class ViewPagerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.layout_fragment, container, false);
         TextView textView = (TextView) view.findViewById(R.id.tv_fragment);
-        textView.setText("Page" + page);
+        if(page==1)
+            textView.setText("热门专区");
+        else if(page==2)
+            textView.setText("社区");
+        else if(page==3)
+            textView.setText("个人健康");
+        else if(page==4)
+            textView.setText("VIP专区");
         view.setBackgroundResource(color);
         return view;
     }
